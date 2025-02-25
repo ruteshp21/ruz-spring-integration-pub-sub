@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ruz-spring-integration-pub-sub
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: web.domains
+          content-type: application/json
+        input:
+          destination: web.domains
+          content-type: application/json
+          group: my-group
+      kafka:
+        binder:
+          brokers: localhost:9092
